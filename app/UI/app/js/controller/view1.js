@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('velavan.view1', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
-    templateUrl: 'UI/partial/view1.html',
+    templateUrl: 'app/partial/view1.html',
     controller: 'View1Ctrl'
   });
 }])

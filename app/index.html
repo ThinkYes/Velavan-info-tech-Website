@@ -6,15 +6,31 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>Velavan info tech</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet/less" type="text/css"  href="app/style/menu/menuContainer.less">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
+<div class="mainLayout">
+  <div class="menuLayout">
+    <div class=menuContainer">
+      <ul>
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Products</li>
+        <li>Contact Us</li>
+      </ul>
+    </div>
+  </div>
+  <div class="caroselLayout"></div>
+  <div class="bodyContentLayout" ></div>
+</div>
+
   <ul class="menu">
     <li><a href="#!/view1">view1</a></li>
     <li><a href="#!/view2">view2</a></li>
@@ -34,8 +50,8 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
-  <script src="UI/js/controller/view1.js"></script>
-  <script src="UI/js/controller/view2.js"></script>
+  <script src="UI/app/js/controller/view1.js"></script>
+  <script src="UI/app/js/controller/view2.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
