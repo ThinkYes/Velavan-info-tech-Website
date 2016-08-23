@@ -11,14 +11,19 @@ gulp.task('delete-css', function () {
 });
 
 gulp.task('less-compile',['delete-css'],function () {
-    return gulp.src(app_directory+'/UI/style/**/*.less')
+    return gulp.src(app_directory+'/UI/app/style/**/*.less')
         .pipe(less())
-        .pipe(gulp.dest(app_directory+'/static/app/style/css'));
+        .pipe(gulp.dest(app_directory+'/static/app/style/'));
 });
 
 gulp.task('copy-partials', function(){
-    return gulp.src(app_directory+'/UI/partial/**/*.html')
+    return gulp.src(app_directory+'/UI/app/partials/**/*.html')
         .pipe(gulp.dest(app_directory+'/static/app/partials'));
+});
+
+gulp.task('copy-js', function(){
+    return gulp.src(app_directory+'/UI/app/js/**/*.js')
+        .pipe(gulp.dest(app_directory+'/static/app/js'));
 });
 
 gulp.task('copy-app-partial',function () {
@@ -31,6 +36,11 @@ gulp.task('copy-app-partial-css',function () {
         .pipe(gulp.dest(app_directory+'/static/'));
 });
 
-gulp.task('default',['copy-app-partial','copy-app-partial-css','copy-partials','less-compile'],function() {
+gulp.task('copy-app-js',function () {
+    return gulp.src(app_directory+'/app.js')
+        .pipe(gulp.dest(app_directory+'/static/'));
+});
+
+gulp.task('default',['copy-app-partial','copy-app-partial-css','copy-app-js','copy-partials','copy-js','less-compile'],function() {
     // place code for your default task here
 });
