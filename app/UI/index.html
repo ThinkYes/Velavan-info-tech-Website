@@ -16,14 +16,13 @@
   <script src="../bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-<div class="mainLayout">
-  <div class="menuLayout">
+<div class="mainLayout" ng-controller="mainController" >
+  <div class="menuLayout" ng-controller="menuController">
     <div class="menuContainer">
       <ul>
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Products</li>
-        <li>Contact Us</li>
+        <li ng-repeat="data in menuData" title="data.name" ng-show="data.active">
+          <a href="#!/{{data.link}}">{{data.name}}</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -52,6 +51,8 @@
   <script src="app.js"></script>
   <script src="app/js/controller/view1.js"></script>
   <script src="app/js/controller/view2.js"></script>
+  <script src="app/js/controller/Menu/menuController.js"></script>
+  <script src="app/js/controller/mainController.js"></script>
   <script src="app/js/version/version.js"></script>
   <script src="app/js/version/version-directive.js"></script>
   <script src="app/js/version/interpolate-filter.js"></script>
