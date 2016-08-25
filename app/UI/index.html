@@ -9,14 +9,14 @@
   <title>Velavan info tech</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="../bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="../bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="vendor/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="vendor/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app/style/menu/menuContainer.css">
-  <script src="../bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="vendor/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
 <div class="mainLayout" ng-controller="mainController" >
+<nav>
   <div class="menuLayout" ng-controller="menuController">
     <div class="menuContainer">
       <ul>
@@ -26,35 +26,36 @@
       </ul>
     </div>
   </div>
-  <div class="caroselLayout"></div>
-  <div class="bodyContentLayout" ></div>
+</nav>
+  <div class="bodyContentLayout" >
+    <div ng-view></div>
+  </div>
+  <footer>
+    <div>Angular seed app: v<span app-version></span></div>
+  </footer>
 </div>
 
-  <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
-
-  <div ng-view></div>
-
-  <div>Angular seed app: v<span app-version></span></div>
-
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="../bower_components/angular/angular.js"></script>
-  <script src="../bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="app/js/controller/view1.js"></script>
-  <script src="app/js/controller/view2.js"></script>
-  <script src="app/js/controller/Menu/menuController.js"></script>
-  <script src="app/js/controller/mainController.js"></script>
-  <script src="app/js/version/version.js"></script>
-  <script src="app/js/version/version-directive.js"></script>
-  <script src="app/js/version/interpolate-filter.js"></script>
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="vendor/angular/0-angular.min.js"></script>
+<script src="vendor/angular/angular-animate.min.js"></script>
+<script src="vendor/angular/angular-mocks.js"></script>
+<script src="vendor/angular/angular-resource.min.js"></script>
+<script src="vendor/angular/angular-route.min.js"></script>
+<script src="vendor/angular/angular-sanitize.min.js"></script>
+<script src="vendor/angular-cookies/angular-cookies.js"></script>
+<script src="app.js"></script>
+<script src="app/js/controller/view1.js"></script>
+<script src="app/js/controller/view2.js"></script>
+<script src="app/js/controller/Menu/menuController.js"></script>
+<script src="app/js/controller/mainController.js"></script>
+<script src="app/js/version/version.js"></script>
+<script src="app/js/version/version-directive.js"></script>
+<script src="app/js/version/interpolate-filter.js"></script>
 </body>
 </html>

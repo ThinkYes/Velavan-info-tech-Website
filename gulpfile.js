@@ -2,7 +2,15 @@ var gulp = require('gulp'),
     less = require('gulp-less'),
     path = require('path'),
     app_directory = 'app',
-    del = require('del');
+    del = require('del'),
+    connect = require('gulp-connect');
+
+gulp.task('webserver', function() {
+    connect.server({
+            root: 'app/static',
+            livereload: true
+    });
+});
 
 gulp.task('delete-css', function () {
     return del([
@@ -32,6 +40,11 @@ gulp.task('copy-js', function(){
         .pipe(gulp.dest(app_directory+'/static/app/js'));
 });
 
+gulp.task('copy-vendor-files',function () {
+    return gulp.src(app_directory+'/UI/vendor/**/*')
+        .pipe(gulp.dest(app_directory+'/static/vendor/'));
+});
+
 gulp.task('copy-app-partial',function () {
     return gulp.src(app_directory+'/UI/index.html')
         .pipe(gulp.dest(app_directory+'/static/'));
@@ -47,6 +60,10 @@ gulp.task('copy-app-js',function () {
         .pipe(gulp.dest(app_directory+'/static/'));
 });
 
-gulp.task('default',['clean','copy-partials','copy-js','copy-app-partial','copy-app-partial-css','copy-app-js','less-compile'],function() {
+gulp.task('copy-depended-files',['copy-partials','copy-js','copy-vendor-files','copy-app-partial','copy-app-partial-css','copy-app-js'],function () {
+
+});
+
+gulp.task('default',['clean','copy-depended-files','less-compile','webserver'],function() {
     // place code for your default task here
 });

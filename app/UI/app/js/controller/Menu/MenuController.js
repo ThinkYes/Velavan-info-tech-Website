@@ -14,7 +14,11 @@ velavan.website.App.controller('menuController', [
                 link:'view2',
                 child : [
                     {
-                        name:'Management',
+                        name:'Management 1',
+                        active:true,
+                        link:''
+                    },{
+                        name:'Management 2',
                         active:true,
                         link:''
                     }

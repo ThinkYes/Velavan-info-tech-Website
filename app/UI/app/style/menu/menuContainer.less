@@ -9,11 +9,21 @@
       margin-bottom: 0px;
       padding-top: 0px;
       height: 100%;
+      float: right;
+      margin-right: 10px;
       li{
         float: left;
         min-width: 100px;
-        border-right: 1px solid #005dbc;
         text-align: center;
+        position: relative;
+        &:before{
+          content: "|";
+          font-size: 12px;
+          left: 0;
+          position: absolute;
+          line-height: 40px;
+          color: #005dbc;
+        }
         &:hover{
           border-bottom: 5px solid #005dbc;
         }
