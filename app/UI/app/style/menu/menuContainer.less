@@ -1,8 +1,10 @@
+@fa-font-path:   "../font";
+
 .menuLayout {
-  color: #f84055;
   .menuContainer{
-    height: 40px;
-    ul{
+    height: 60px;
+    background-color: #5974ad;
+    .menuList{
       margin-top: 0px;
       list-style-type: none;
       padding-left: 0px;
@@ -11,29 +13,71 @@
       height: 100%;
       float: right;
       margin-right: 10px;
-      li{
+      font-family: UbuntuBold;
+      .menuItems{
         float: left;
-        min-width: 100px;
+        min-width: 120px;
         text-align: center;
         position: relative;
+        height: 55px;
+        &:first-child:before{
+          content: "";
+        }
         &:before{
           content: "|";
           font-size: 12px;
           left: 0;
           position: absolute;
-          line-height: 40px;
-          color: #005dbc;
+          line-height: 60px;
+          color: #FFFFFF;
+        }
+        &:hover > ul{
+          height: auto;
+          position: absolute;
+          display: block;
+          transform: scale(1,1);
         }
         &:hover{
-          border-bottom: 5px solid #005dbc;
+          border-bottom: 5px solid #fde30a;
         }
         a{
           text-decoration: none;
-          font-size: 16px;
-          line-height: 40px;
+          font-size: 18px;
+          line-height: 60px;
           display: block;
+          color: white;
+        }
+        .subMenulist{
+          margin-top: 0px;
+          list-style-type: none;
+          padding-left: 0px;
+          margin-bottom: 0px;
+          padding-top: 0px;
+          font-family: UbuntuBold;
+          background-color: #5974ad;
+          transition: transform 0.3s ease-in-out;
+          height: 0;
+          overflow: hidden;
+          transform: scale(1,0);
+          transform-origin: top;
+          display: table-column;
+          z-index: 10;
+          .subMenuItems{
+            min-width: 180px;
+            text-align: center;
+            position: relative;
+            height: 60px;
+            .subListtext{
+              height:55px;
+              &:hover{
+                border-bottom: 5px solid #fde30a;
+              }
+            }
+
+          }
         }
       }
     }
   }
 }
+

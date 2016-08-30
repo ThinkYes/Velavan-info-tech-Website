@@ -12,15 +12,15 @@ velavan.website.App.controller('menuController', [
                 name:'About Us',
                 active:true,
                 link:'view2',
-                child : [
+                children : [
                     {
                         name:'Management 1',
                         active:true,
-                        link:''
+                        link:'view2'
                     },{
                         name:'Management 2',
                         active:true,
-                        link:''
+                        link:'view1'
                     }
                 ]
             },{
@@ -30,11 +30,11 @@ velavan.website.App.controller('menuController', [
             },{
                 name:'Contact Us',
                 active:true,
-                link:'view4'
+                link:'ContactUs'
             },{
                 name:'Services',
                 active:false,
-                link:'view5'
+                link:'Services'
             }
         ];
     }]);

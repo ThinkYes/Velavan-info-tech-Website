@@ -9,24 +9,42 @@
   <title>Velavan info tech</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="vendor/jquery/jquery-ui.min.css">
   <link rel="stylesheet" href="vendor/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="vendor/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-multiselect.css">
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="app/style/menu/menuContainer.css">
+  <link rel="stylesheet" href="app/style/ContactUs/contactUs.css">
+  <link rel="stylesheet" href="app/style/common/font.css">
   <script src="vendor/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
 <div class="mainLayout" ng-controller="mainController" >
-<nav>
-  <div class="menuLayout" ng-controller="menuController">
-    <div class="menuContainer">
-      <ul>
-        <li ng-repeat="data in menuData" title="data.name" ng-show="data.active">
-          <a href="#!/{{data.link}}">{{data.name}}</a>
-        </li>
-      </ul>
+  <nav>
+    <div class="menuLayout" ng-controller="menuController">
+      <div class="menuContainer">
+        <ul class="menuList">
+          <li ng-repeat="data in menuData" title="{{data.name}}" class="menuItems"  ng-show="data.active">
+            <span>
+              <i class="fa fa-bars"></i>
+              <a class="listText" href="#!/{{data.link}}">
+                {{data.name}}
+              </a>
+            </span>
+            <ul ng-if="data.children" class="subMenulist">
+              <li ng-repeat="child in data.children" class="subMenuItems" ng-show="child.active">
+                <div class="subListtext">
+                  <a  href="#!/{{child.link}}">{{child.name}}</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
   <div class="bodyContentLayout" >
     <div ng-view></div>
   </div>
@@ -42,6 +60,11 @@
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
+<script src="vendor/jquery/0-jquery.min.js"></script>
+<script src="vendor/jquery/jquery-ui.min.js"></script>
+<script src="vendor/jquery/jquery.isotope.js"></script>
+<script src="vendor/jquery/jquery.isotope.perfectMasonary.js"></script>
+<script src="vendor/jquery/jquery.textcomplete.min.js"></script>
 <script src="vendor/angular/0-angular.min.js"></script>
 <script src="vendor/angular/angular-animate.min.js"></script>
 <script src="vendor/angular/angular-mocks.js"></script>
@@ -49,11 +72,20 @@
 <script src="vendor/angular/angular-route.min.js"></script>
 <script src="vendor/angular/angular-sanitize.min.js"></script>
 <script src="vendor/angular-cookies/angular-cookies.js"></script>
+<script src="vendor/angular-ui-bootstrap/ui-bootstrap-tpls-0.14.3.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap-multiselect.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src='vendor/lodash/lodash.min.js'></script>
+<script src='vendor/angular-simple-logger/dist/angular-simple-logger.min.js'></script>
+<script src='vendor/angular-google-maps/dist/angular-google-maps.min.js'></script>
+<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+<link rel="stylesheet" src="vendor/font-awesome/css/font-awesome.min.css"> </link>
 <script src="app.js"></script>
 <script src="app/js/controller/view1.js"></script>
 <script src="app/js/controller/view2.js"></script>
 <script src="app/js/controller/Menu/menuController.js"></script>
 <script src="app/js/controller/mainController.js"></script>
+<script src="app/js/controller/ContactUS/contactUsController.js"></script>
 <script src="app/js/version/version.js"></script>
 <script src="app/js/version/version-directive.js"></script>
 <script src="app/js/version/interpolate-filter.js"></script>
