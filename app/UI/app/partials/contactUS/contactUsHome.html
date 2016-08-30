@@ -10,11 +10,41 @@
             <ui-gmap-google-map center='map.center' zoom='map.zoom' pan="true"></ui-gmap-google-map>
         </div>
         <div class="col-xs-12 col-md-6">
-            Address
+            <div>
+                <span> Address : </span>
+                <span> No.63/ D2, 2nd Floor,<br> Tennur High Road, Tennur,<br> Trichy – 620 017</span>
+            </div>
+            <div>
+                <span>Mobile:</span>
+                <span>95 66 56 61 10 <br> 84 28 47 48 49</span>
+            </div>
+            <div>
+                <span>Email:</span>
+                <span>md2velavaninfotech@gmail.com</span>
+            </div>
         </div>
-        <div class="col-xs-12 col-md-6">
-            Touch
-        </div>
+        <div class="getInTouch col-xs-12 col-md-6">
+            <div class="messageContainer">
+                <span class="message">
+                    Get In Touch
+                </span>
+            </div>
+            <div class="col-md-6 col-xs-12 form-group">
+                <input type="text" ng-model="contact.name" id="contactName" class="form-control" placeholder="Name" required/>
+            </div>
+            <div class="col-md-6 col-xs-12 form-group">
+                <input type="email" ng-model="contact.email" id="contactEmail" class="form-control" placeholder="example@xyz.com" required/>
+            </div>
 
+            <div class="col-xs-12 form-group">
+                <input type="text" ng-model="contact.subject" id="contactSubject" class="form-control" placeholder="Subject" required/>
+            </div>
+            <div class="col-xs-12 form-group">
+                <textarea ng-model="contact.message" id="contactMessage" class="form-control" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class="col-xs-12">
+                <button type="button" class="sendButton btn btn-primary">Send</button>
+            </div>
+        </div>
     </div>
 </div>
